@@ -1,0 +1,27 @@
+//Wenting Li
+//APCS2 pd01
+//HW01 -- ...We Go!
+//2018-01-30 T
+
+To-do:
+In a plaintext file named quack.quack, commit to posterity an account of your most 
+riveting adventure with your duckie last year.
+
+Out of the countless unforgettable memories I've had with my duckie Penny in the year 2017,
+the most recountable story is actually quite recent. It was a rainy Friday evening in December. 
+I had just sat through a one hour and thirty minute session of my government assignment, and 
+I was planning on reviewing a previous APCS homework and its posted solution to update my code
+and rewrite notes. After booting up the codes and running each in my machine, I quickly realized
+that the solution didn't run! Puzzled, I had Penny take a look at the solution code with me 
+to figure out what was going on. 
+
+Turns out, in the solution code, there were two errors that had to be addressed. With Penny, 
+I quickly debugged the first error. However, tackling the second error was many times harder.
+After staring at the code for an hour and furious discussion with Penny, we were able to 
+disect the code and understand the general "flow" of how the code works. However, rewriting 
+the code was still a tough task. Finally, at 1AM next morning, Penny and I had a sudden rush 
+of inspiration, and an hour later, we finally successfully debugged the code. It was a long 
+night, and perhaps the most trouble Penny and I had while debugging a code. We were able to 
+restrengthen hazy concepts and pave the way to higher understanding after almost an entire
+night's worth of hard work (this is the first time Penny and I had stayed up coding the entire
+night). This is why this night is one of the most riveting adventures I had with Penny.
