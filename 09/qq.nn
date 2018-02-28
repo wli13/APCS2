@@ -1,0 +1,120 @@
+//Wenting Li
+//APCS2 pd01
+//HW09 -- Yaaasss Queens
+//2018-02-27
+
+Task: Without succumbing to the temptation of an Internet search, explain as clearly as possible, in a plaintext file,
+      how you know whether each case is solvable -- and if so, how many solutions it has.
+
+      NOTE: In a n by n chess board, how many ways/solutions are there to place n queen pieces such that they can not 
+            attack each other? (Queens can attack horizontally, vertically, and diagonally!)
+            
+            The trick is to place Queens in a L-shaped slope (while making sure to place each new queen in a line with
+            no queens when a slope line finishes) to avoid placing two queens in the same diagonal. Start with the first
+            column in the first row and make L-shaped slopes. If that doesn't produce a solution, repeat with second column
+            until you reach end of the row (which concludes your search?). 
+
+            X   0   0
+            0   0   0
+            0   X   0   (NOTICE the two X marks in a L-shaped slope)
+
+            Each distinct solution/configuration may have up to four rotations and a mirrored reflection (across the 
+            diagonal of the board; also with up to four rotations). Some rotations OVERLAP!!!! 
+
+
+- 2x2 -- No solutions; Impossible to place the 2nd queen.
+    1   0
+    0      (Incorrect)
+
+- 3x3 -- No solutions; Impossible to place the 3rd queen.
+    1   0   0
+    0   0   
+    0   1   0   (Incorrect)
+
+- 4x4 -- 2 solutions; 1 distinct solution 
+    0   0   1   0
+    1   0   0   0
+    0   0   0   1
+    0   1   0   0   (1 roation each for this and mirrored; total 2) [OVERLAP!]
+
+- 5x5 -- 10 solutions; 2 distinct solutions
+    1   0   0   0   0
+    0   0   0   1   0
+    0   1   0   0   0
+    0   0   0   0   1
+    0   0   1   0   0   (4 rotations each for this and mirrored solution; total 8)
+    
+    ..or..
+
+    0   1   0   0   0
+    0   0   0   0   1
+    0   0   1   0   0
+    1   0   0   0   0
+    0   0   0   1   0   (1 rotation each for this and mirrored, total 2) [OVERLAP!]
+
+- 6x6 -- 4 solutions; 1 distinct solution
+    0   0   0   1   0   0
+    1   0   0   0   0   0
+    0   0   0   0   1   0
+    0   1   0   0   0   0
+    0   0   0   0   0   1
+    0   0   1   0   0   0   (2 rotations each for this and mirrored, total 4) [OVERLAP!]
+
+- 7x7 -- 40 solutions; 5 distinct solutions
+    1   0   0   0   0   0   0
+    0   0   0   0   1   0   0
+    0   1   0   0   0   0   0
+    0   0   0   0   0   1   0
+    0   0   1   0   0   0   0
+    0   0   0   0   0   0   1
+    0   0   0   1   0   0   0   (4 rotations each for this and mirrored, total 8)
+
+    ..or..
+
+    0   0   1   0   0   0   0
+    0   0   0   0   0   0   1
+    0   0   0   1   0   0   0
+    1   0   0   0   0   0   0
+    0   0   0   0   1   0   0
+    0   1   0   0   0   0   0
+    0   0   0   0   0   1   0   (4 rotations each for this and mirrored, total 8)
+    
+    ..or..
+
+    0   0   0   0   1   0   0
+    0   1   0   0   0   0   0
+    0   0   0   0   0   1   0
+    0   0   1   0   0   0   0
+    0   0   0   0   0   0   1
+    0   0   0   1   0   0   0
+    1   0   0   0   0   0   0   (4 rotations each for this and mirrored, total 8)
+    
+    ..or..
+
+    0   0   0   0   0   1   0
+    0   0   1   0   0   0   0
+    0   0   0   0   0   0   1
+    0   0   0   1   0   0   0
+    1   0   0   0   0   0   0
+    0   0   0   0   1   0   0
+    0   1   0   0   0   0   0   (4 rotations each for this and mirrored, total 8)
+    
+    ..or..
+
+    0   0   0   0   0   0   1
+    0   0   0   1   0   0   0
+    1   0   0   0   0   0   0
+    0   0   0   0   1   0   0
+    0   1   0   0   0   0   0
+    0   0   0   0   0   1   0
+    0   0   1   0   0   0   0   (4 rotations each for this and mirrored, total 8)
+
+- 8x8 -- too many to count! Nevertheless, solutions exist!
+    1   0   0   0   0   0   0   0
+    0   0   0   0   0   0   1   0
+    0   0   0   0   1   0   0   0
+    0   0   0   0   0   0   0   1
+    0   1   0   0   0   0   0   0
+    0   0   0   1   0   0   0   0
+    0   0   0   0   0   1   0   0
+    0   0   1   0   0   0   0   0
