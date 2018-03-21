@@ -28,31 +28,7 @@ public class QueenBoard
    */
   public boolean solve()
   {
-    int sz = _board.length;
-    int row = 0;
-    int col = 0;
-    int QCount = 0;
-    while (row < sz && col < sz){
-      if (QCount == sz){
-        return true;
-      }
-      else if (solveH(col)){
-        col++;
-        row = 0;
-        QCount += 1;
-        //		printSolution();
-        //		System.out.println(toString());
-      }
-	    else {
-		    col--;
-		    row = 0;
-		    while (_board[row][col] != 1){
-		        row++;
-		    }
-      return false;
-      }
-      //STILL DEVELOPING
-    }
+    return false;
   }
 
   
@@ -61,12 +37,7 @@ public class QueenBoard
    */
   private boolean solveH( int col ) 
   {
-    for (int x = 0; x < _board.length; x++){
-	    if (_board[x][col] == 0){
-		    return addQueen(x,col);
-	    }
-	  }
-	  return false;
+    return false;
   }
 
 
@@ -77,21 +48,6 @@ public class QueenBoard
         all negs and 0's replaced with underscore
         all 1's replaced with 'Q'
     */
-
-    String ans = "";
-    for( int r = 0; r < _board.length; r++ ) {
-      for( int c = 0; c < _board[0].length; c++ ) {
-        if (_board[r][c] <= 0){
-          ans += "_";
-        }
-        if (_board[r][c] == 1){
-          ans += "Q";
-        }
-        ans += "\t";
-      }
-      ans += "\n";
-    }
-    System.out.println(ans);
   }
 
 
@@ -99,17 +55,9 @@ public class QueenBoard
   //================= YE OLDE SEPARATOR =================
 
   /***
-   * places a Queen in the specified slot if slot holds a 0, an empty slot,
-   * and marks its range
-   * (ie. the slot isn't empty and isn't in the range of another Queen)
+   * <General description>
    * precondition: 
-   *  - given a board of n by n of any values
    * postcondition: 
-   *  - places a Queen in the specified slot, returns true
-   *  - offsets the rest of the current row, column, and diagonal by -1 to 
-   *    mark the range of the new Queen.
-   *  - if the specified slot doesn't hold 0, don't place anything and 
-   *    return false
    */
   private boolean addQueen(int row, int col){
     if(_board[row][col] != 0){
@@ -132,14 +80,9 @@ public class QueenBoard
 
 
   /***
-   * removes a Queen in the specified slot if slot holds a 1, an occupied
-   * slot, and unmarks its range
-   * precondition:
-   *  - given a board of n by n of any values
+   * <General description>
+   * precondition: 
    * postcondition: 
-   *  - if slot holds a 1, remove the Queen and unmark all of the offsets
-   *    (ie. marked range) return true
-   *  - if slot doesn't hold a 1, return false
    */
   private boolean removeQueen(int row, int col){
     if ( _board[row][col] != 1 ) {
@@ -163,11 +106,11 @@ public class QueenBoard
 
 
   /***
-   * Prints the layout of the board of a QueenBoard object
-   * precondition: Given a board of n by n by any value
-   * postcondition: Prints the layout of the given board
+   * <General description>
+   * precondition: 
+   * postcondition: 
    */
-  public String toString() 
+  public String  toString() 
   {
     String ans = "";
     for( int r = 0; r < _board.length; r++ ) {
@@ -189,12 +132,6 @@ public class QueenBoard
     b.addQueen(0,1);
     System.out.println(b);
     b.removeQueen(3,0);
-    System.out.println(b);
-    b.addQueen(0,2); //if a tile selected contains a negative number, queen not placed
-    System.out.println(b);
-    b.addQueen(1,0); //preference on columns to the left, if I add a queen to the left of existing queens, board focuses on modifying board to accomodate queen on the left. However, its markings on diagonals and rows do not disappear(does this cause a problem?)
-    System.out.println(b);    
-    b.addQueen(1,2); //unless removeQueen is used, markings on diagonals and rows will stay and cause probelms
     System.out.println(b);
   }
     

@@ -1,0 +1,17 @@
+Wenting Li
+APCS2 pd1
+HW11 -- Get On the Bus
+2018-03-01
+
+1. Place knight in next available spot in the first column.
+2. Mark current spot, choose one of the possible paths to take 
+   (in the L shape), and move to a new spot.
+3. Repeat step 2 from the new spot.
+Continue until...
+	a. If the knight has gone through all the spots (every spot is marked), 
+       return true.
+	b. If the knight cannot complete all the paths (all possible paths lead 
+       to a marked spot), undo the most recent move and choose a new path.
+       Repeat until solution is found.
+
+HOW DOES THE MACHINE KNOW WHEN A SOLUTION CANT BE FOUND?
